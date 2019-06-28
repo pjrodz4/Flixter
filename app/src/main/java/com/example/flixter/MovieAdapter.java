@@ -2,6 +2,8 @@ package com.example.flixter;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -60,7 +62,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         Movie movie = movies.get(i);
         // populate the view with the movie data
         viewHolder.tvTitle.setText(movie.getTitle());
+        viewHolder.tvTitle.setTextColor(Color.WHITE);
+        viewHolder.tvTitle.setTypeface(viewHolder.tvTitle.getTypeface(), Typeface.BOLD);
+        
         viewHolder.tvOverview.setText(movie.getOverview());
+        viewHolder.tvOverview.setTextColor(Color.GRAY);
 
         // determine the current orientation
         boolean isPortrait = context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
